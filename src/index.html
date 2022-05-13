@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8"/>
 
     <link rel="icon" href="favicon.ico"/>
@@ -25,7 +24,6 @@
 
     <script type="module" src="./styles.ts"></script>
     <script type="module" src="./main.ts"></script>
-
 </head>
 <body>
 
@@ -39,29 +37,21 @@
     <!-- SIDEBAR -->
     <!-- ------------------------------------ -->
 
-    <aside class="side-bar">
-
-    </aside>
+    {{> side-bar }}
 
     <!-- ------------------------------------ -->
     <!-- MAIN CONTENT -->
     <!-- ------------------------------------ -->
 
     <main>
-
-
-        <button class="social-media-btn">
-            <span class="icon">share</span>
-        </button>
+        {{> home }}
     </main>
 
     <!-- ------------------------------------ -->
     <!-- FOOTER -->
     <!-- ------------------------------------ -->
 
-    <footer class="footer">
-
-    </footer>
+    {{> footer }}
 
     <noscript>Please allow JavaScript to run to be able to use this website.</noscript>
 

@@ -23,10 +23,11 @@
         "target": "es2017",
         "module": "es2020",
         "lib": [
-            "es2020",
+            "ES2020",
             "DOM",
-            "ESNext.Intl",
+            "ES2020.Intl",
             "DOM.Iterable"
-        ],
-    }
+        ]
+    },
+    "include": ["./src/**/*.ts"]
 }

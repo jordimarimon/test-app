@@ -7,6 +7,9 @@ const {pathname: cwd} = new URL('.', import.meta.url);
 
 export default defineConfig({
     root: './src',
+    build: {
+        outDir: path.join(cwd, 'dist'),
+    },
     server: {
         port: 8000,
     },

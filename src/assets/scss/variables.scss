@@ -54,15 +54,8 @@
     --border-radius-lg: 0.5rem; /* 8px */
     --border-radius-xl: 1rem; /* 16px */
 
-    /** Z-Indexes */
-    --sidebar-z-index: 9;
-    --navbar-z-index: 6;
-
     /** Opacities */
     --opacity-disabled: 0.4;
-
-    /** Form controls height (input, buttons, pagination, etc...) */
-    --form-control-height: 2.5rem; /* 40px */
 
     /** Safe area */
     --sat: env(safe-area-inset-top);
@@ -282,7 +275,10 @@
 //////////////////////////////////////////////////////////////
 
 :root {
-    --sidebar-width-sm: 3.75rem;
-    --sidebar-width: 20rem;
+    /** Sizes */
     --navbar-height: 3.75rem;
+
+    /** Z-Indexes */
+    --sidebar-z-index: 9;
+    --navbar-z-index: 6;
 }

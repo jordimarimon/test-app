@@ -12,7 +12,9 @@
             true,
             {
                 "ignoreFunctions": [
-                    "map.get"
+                    "map.get",
+                    "mixins.should-animate",
+                    "mixins.media-up"
                 ]
             }
         ],
