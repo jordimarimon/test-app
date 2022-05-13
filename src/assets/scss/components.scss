@@ -3,8 +3,14 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 .header {
+    position: fixed;
     display: flex;
+    align-items: center;
     padding: 0.5rem;
+    width: 100%;
+    height: var(--navbar-height);
+    background-color: hsl(var(--color-primary-500));
+    z-index: var(--navbar-z-index);
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -28,8 +34,7 @@
     font-weight: normal;
     font-style: normal;
     font-variant: normal;
-    font-size: 1em;
-    color: currentcolor;
+    font-size: 1.5rem;
     width: 1.5em;
     height: 1.5em;
     line-height: 1;

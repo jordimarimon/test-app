@@ -28,7 +28,6 @@ button {
     margin: 0;
     background-color: transparent;
     border: none;
-    outline: none;
     user-select: none;
     appearance: none;
     cursor: pointer;
@@ -49,8 +48,15 @@ button {
     }
 
     &:focus-visible {
-        outline: var(--outline-size) solid hsl(var(--outline-color));
+        outline: 3px solid hsl(var(--color-neutral-1000));
     }
+}
+
+img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+    object-fit: cover;
 }
 
 [hidden] {

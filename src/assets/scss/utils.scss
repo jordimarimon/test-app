@@ -29,3 +29,24 @@
         margin: 1rem;
     }
 }
+
+.ms {
+    &-auto {
+        margin-inline-start: auto;
+    }
+}
+
+.absolute {
+    &-center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.text {
+    &-neutral-0 {
+        color: hsl(var(--color-neutral-0));
+    }
+}

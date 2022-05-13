@@ -1,9 +1,18 @@
+import handlebars from 'vite-plugin-handlebars';
 import { defineConfig } from 'vite';
+import path from 'path';
+
+
+const {pathname: cwd} = new URL('.', import.meta.url);
 
 export default defineConfig({
     root: './src',
     server: {
         port: 8000,
     },
-    plugins: [],
+    plugins: [
+        handlebars({
+            partialDirectory: path.join(cwd, 'src', 'partials'),
+        }),
+    ],
 });
