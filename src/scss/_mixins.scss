@@ -1,0 +1,24 @@
+@use "sass:map";
+@use "globals";
+
+/**
+ * For enabling animations when user has no preference about it.
+ */
+@mixin should-animate() {
+    @media (prefers-reduced-motion: no-preference) {
+        @content;
+    }
+}
+
+/**
+ * Media query that applies for screen sizes bigger than the provided breakpoint.
+ */
+@mixin media-up($breakpoint) {
+    $breakpoint-value: map.get(globals.$breakpoint, $breakpoint);
+
+    @if $breakpoint-value {
+        @media screen and (min-width: #{$breakpoint-value}) {
+            @content;
+        }
+    }
+}

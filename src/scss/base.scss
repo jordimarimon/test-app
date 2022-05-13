@@ -1,0 +1,58 @@
+html {
+    display: block;
+    width: 100%;
+    height: 100%;
+    scroll-padding-top: var(--navbar-height);
+}
+
+html,
+body {
+    color: hsl(var(--color-text));
+    background-color: hsl(var(--background-color));
+}
+
+body {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: var(--font-size-md);
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+button {
+    display: inline-flex;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    user-select: none;
+    appearance: none;
+    cursor: pointer;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: hsla(0 0% 0% / 0%);
+
+    // The `outline: none` from above works on all browsers, however Firefox also
+    // adds a special `focus-inner` which we have to disable explicitly.
+    // See: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#Firefox
+    &::-moz-focus-inner {
+        border: 0;
+    }
+
+    &:disabled {
+        cursor: default;
+        opacity: var(--opacity-disabled);
+        pointer-events: none;
+    }
+
+    &:focus-visible {
+        outline: var(--outline-size) solid hsl(var(--outline-color));
+    }
+}
+
+[hidden] {
+    display: none;
+}

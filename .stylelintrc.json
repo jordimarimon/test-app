@@ -1,0 +1,97 @@
+{
+    "extends": [
+        "stylelint-config-standard-scss",
+        "stylelint-config-prettier-scss"
+    ],
+    "defaultSeverity": "error",
+    "reportDescriptionlessDisables": true,
+    "reportInvalidScopeDisables": true,
+    "reportNeedlessDisables": true,
+    "rules": {
+        "function-no-unknown": [
+            true,
+            {
+                "ignoreFunctions": [
+                    "map.get"
+                ]
+            }
+        ],
+        "scss/at-rule-no-unknown": [
+            true,
+            {
+                "ignoreAtRules": [
+                    "tailwind",
+                    "apply",
+                    "layer",
+                    "variants",
+                    "responsive",
+                    "screen"
+                ]
+            }
+        ],
+        "no-duplicate-selectors": null,
+        "selector-class-pattern": null,
+        "no-invalid-position-at-import-rule": null,
+        "alpha-value-notation": "percentage",
+        "hue-degree-notation": "number",
+        "color-function-notation": "modern",
+        "color-named": "never",
+        "color-no-hex": true,
+        "length-zero-no-unit": [
+            true,
+            {
+                "ignore": [
+                    "custom-properties"
+                ]
+            }
+        ],
+        "font-family-name-quotes": "always-where-required",
+        "font-weight-notation": null,
+        "function-url-quotes": "always",
+        "font-family-no-missing-generic-family-keyword": null,
+        "unit-allowed-list": [
+            [
+                "rem",
+                "em",
+                "deg",
+                "%",
+                "ms",
+                "fr",
+                "vh",
+                "vw"
+            ],
+            {
+                "ignoreProperties": {
+                    "px": [
+                        "/^box-shadow/",
+                        "/^outline/",
+                        "/^border/"
+                    ]
+                }
+            }
+        ],
+        "shorthand-property-no-redundant-values": true,
+        "value-no-vendor-prefix": [
+            true,
+            {
+                "ignoreValues": [
+                    "sticky"
+                ]
+            }
+        ],
+        "declaration-block-no-redundant-longhand-properties": true,
+        "declaration-no-important": true,
+        "selector-attribute-quotes": "always",
+        "media-feature-name-no-vendor-prefix": true,
+        "max-nesting-depth": 5,
+        "no-irregular-whitespace": true,
+        "no-unknown-animations": true,
+        "no-descending-specificity": null,
+        "selector-list-comma-newline-after": "always",
+        "block-closing-brace-newline-before": "always",
+        "block-opening-brace-newline-after": "always",
+        "declaration-block-semicolon-newline-after": "always",
+        "rule-empty-line-before": null,
+        "scss/at-mixin-argumentless-call-parentheses": null
+    }
+}
