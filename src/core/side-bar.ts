@@ -19,8 +19,10 @@ function toggleSideBar(value?: boolean): void {
         }
 
         if (sideBarVisibility) {
+            document.documentElement.classList.add('block-scroll');
             sideBar?.classList.add('side-bar--open');
         } else {
+            document.documentElement.classList.remove('block-scroll');
             sideBar?.classList.remove('side-bar--open');
         }
     });
