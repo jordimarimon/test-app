@@ -1,4 +1,4 @@
-# GCN Test App
+# Test App
 
 This is a test app.
 

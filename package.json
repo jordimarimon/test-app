@@ -1,9 +1,9 @@
 {
-    "name": "gcn-test-app",
+    "name": "test-app",
     "private": true,
     "version": "0.0.0",
     "author": "Jordi Marimon Palarea",
-    "description": "Sample application for GCN",
+    "description": "Sample application",
     "scripts": {
         "dev": "vite --host --config vite.config.ts",
         "build": "PROD=true vite build",
