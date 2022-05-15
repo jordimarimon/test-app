@@ -19,9 +19,11 @@ function toggleSideBar(value?: boolean): void {
         }
 
         if (sideBarVisibility) {
+            sideBarToggle?.setAttribute('aria-expanded', 'true');
             document.documentElement.classList.add('block-scroll');
             sideBar?.classList.add('side-bar--open');
         } else {
+            sideBarToggle?.setAttribute('aria-expanded', 'false');
             document.documentElement.classList.remove('block-scroll');
             sideBar?.classList.remove('side-bar--open');
         }

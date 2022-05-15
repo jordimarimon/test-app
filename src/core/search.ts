@@ -26,10 +26,12 @@ function toggleSearchOverlay(value?: boolean): void {
 
     requestAnimationFrame(() => {
         if (searchOverlayVisibility) {
+            toggleBtn?.setAttribute('aria-expanded', 'true');
             document.documentElement.classList.add('block-scroll');
             overlay.classList.add('search-overlay--open');
             inputEl?.focus();
         } else {
+            toggleBtn?.setAttribute('aria-expanded', 'false');
             document.documentElement.classList.remove('block-scroll');
             overlay.classList.remove('search-overlay--open');
         }
