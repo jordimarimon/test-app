@@ -1,5 +1,10 @@
-<header class="header">
-    <button id="side-bar-toggle">
+<header id="navbar" class="navbar">
+    <button
+        id="side-bar-toggle"
+        aria-label="Open menu"
+        aria-controls="side-bar"
+        aria-expanded="false"
+    >
         <span class="icon text-neutral-0">menu</span>
     </button>
 
@@ -11,7 +16,13 @@
         class="absolute-center"
     />
 
-    <button class="ms-auto">
+    <button
+        id="search-toggle"
+        class="ms-auto"
+        aria-label="Search in web"
+        aria-controls="search-overlay"
+        aria-expanded="false"
+    >
         <span class="icon text-neutral-0">search</span>
     </button>
 </header>

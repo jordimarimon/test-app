@@ -1,19 +1,27 @@
-const sideBar = document.getElementById('side-bar');
 const sideBarToggle = document.getElementById('side-bar-toggle');
+const closeBtn = document.getElementById('side-bar-close-btn');
+const sideBar = document.getElementById('side-bar');
 
 let sideBarVisibility = false;
 
-sideBarToggle?.addEventListener('click', toggleSideBar);
+closeBtn?.addEventListener('click', () => toggleSideBar(false));
+sideBarToggle?.addEventListener('click', () => toggleSideBar());
 
 /**
  * Changes the visibility of the sidebar
  */
-function toggleSideBar(): void {
-    sideBarVisibility = !sideBarVisibility;
+function toggleSideBar(value?: boolean): void {
+    sideBarVisibility = value ?? !sideBarVisibility;
 
-    if (sideBarVisibility) {
-        sideBar?.classList.add('side-bar--open');
-    } else {
-        sideBar?.classList.remove('side-bar--open');
-    }
+    requestAnimationFrame(() => {
+        if (!sideBar?.classList.contains('side-bar-animate')) {
+            sideBar?.classList.add('side-bar-animate');
+        }
+
+        if (sideBarVisibility) {
+            sideBar?.classList.add('side-bar--open');
+        } else {
+            sideBar?.classList.remove('side-bar--open');
+        }
+    });
 }

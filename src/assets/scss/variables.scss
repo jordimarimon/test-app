@@ -157,7 +157,7 @@
 
     /** Background colors */
     --background-color: var(--color-neutral-0);
-    --surface-background-color: var(--color-neutral-0);
+    --surface-background-color: var(--color-neutral-100);
     --floating-surface-background-color: var(--color-neutral-0);
 
     /** Backdrop */
@@ -277,8 +277,11 @@
 :root {
     /** Sizes */
     --navbar-height: 3.75rem;
+    --button-height: 2.5rem;
+    --input-height: 2.5rem;
 
     /** Z-Indexes */
+    --search-overlay-z-index: 10;
     --sidebar-z-index: 9;
     --navbar-z-index: 6;
 }

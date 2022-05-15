@@ -7,7 +7,12 @@ const plugins = {
 };
 
 if (production) {
-    plugins['@fullhuman/postcss-purgecss'] = {content: ['./**/*.html']};
+    plugins['@fullhuman/postcss-purgecss'] = {
+        content: [
+            './**/*.html',
+            './**/*.ts',
+        ],
+    };
 }
 
 module.exports = {

@@ -22,3 +22,12 @@
         }
     }
 }
+
+/**
+ * Adds the default transition for the specified properties
+ */
+@mixin transition($css-properties...) {
+    transition-property: $css-properties;
+    transition-duration: 250ms;
+    transition-timing-function: ease;
+}

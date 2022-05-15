@@ -1,10 +1,10 @@
 @use "mixins";
 
 ///////////////////////////////////////////////////////////////////////////////
-/////////// HEADER
+/////////// NAVBAR
 ///////////////////////////////////////////////////////////////////////////////
 
-.header {
+.navbar {
     position: fixed;
     display: flex;
     align-items: center;
@@ -13,6 +13,18 @@
     height: var(--navbar-height);
     background-color: hsl(var(--color-primary-500));
     z-index: var(--navbar-z-index);
+    box-shadow:
+        0 4px 6px -1px hsla(var(--color-neutral-900) / 10%),
+        0 2px 4px -1px hsla(var(--color-neutral-900) / 5%);
+
+    &--hide {
+        opacity: 0%;
+        transform: translateY(-100%);
+    }
+
+    @include mixins.should-animate {
+        @include mixins.transition(transform, opacity);
+    }
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -21,25 +33,59 @@
 
 .side-bar {
     position: fixed;
-    top: 0;
-    inset-inline-end: 0;
-    bottom: 0;
-    inset-inline-start: 0;
+    inset: 0;
     display: flex;
     flex-direction: column;
+    height: 100%;
     background-color: hsl(var(--color-neutral-0));
     z-index: var(--sidebar-z-index);
-    transform: translateX(-50%);
-
-    @include mixins.should-animate {
-        will-change: transform;
-        transition-property: transform;
-        transition-duration: 250ms;
-        transition-timing-function: ease;
-    }
+    transform: translateX(-100%);
+    will-change: transform;
+    overflow-y: auto;
 
     &--open {
         transform: translateX(0);
+    }
+
+    &__close-btn {
+        display: block;
+        width: var(--button-height);
+        height: var(--button-height);
+        margin-inline-start: auto;
+        margin-inline-end: 0.5rem;
+        margin-top: 1rem;
+    }
+
+    &__nav {
+        display: block;
+        width: 100%;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 1rem;
+    }
+
+    &__list-item {
+        display: flex;
+        align-items: center;
+        padding: 1rem 0.5rem;
+    }
+
+    &__link {
+        display: block;
+        font-size: var(--font-size-md);
+        color: hsl(var(--color-text));
+        appearance: none;
+        text-decoration: unset;
+    }
+
+    @include mixins.should-animate {
+        &-animate {
+            @include mixins.transition(transform);
+        }
     }
 }
 
@@ -87,18 +133,83 @@
 }
 
 ///////////////////////////////////////////////////////////////////////////////
-/////////// SOCIAL MEDIA BUTTON
+/////////// SEARCH OVERLAY
 ///////////////////////////////////////////////////////////////////////////////
 
-.social-media-btn {
+.search-overlay {
+    $root: &;
+
     position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
-}
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: hsla(var(--backdrop-background-color));
+    pointer-events: all;
+    cursor: pointer; // So it fires click events in iOS
+    opacity: 0%;
+    z-index: var(--search-overlay-z-index);
 
-///////////////////////////////////////////////////////////////////////////////
-/////////// PAGE SEARCH
-///////////////////////////////////////////////////////////////////////////////
+    &__content {
+        position: relative;
+        display: block;
+        padding: 1rem;
+        color: var(--color-text);
+        background-color: hsl(var(--floating-surface-background-color));
+        z-index: calc(var(--search-overlay-z-index) + 1);
+        transform: translateY(-100%);
+        box-shadow:
+            0 20px 25px -5px hsla(var(--color-neutral-900) / 10%),
+            0 10px 10px -5px hsla(var(--color-neutral-900) / 5%);
+
+        @include mixins.should-animate {
+            @include mixins.transition(transform);
+        }
+    }
+
+    &__search-icon {
+        position: absolute;
+        top: 50%;
+        left: 1.5rem;
+        width: var(--button-height);
+        height: var(--button-height);
+        color: currentcolor;
+        transform: translateY(-50%);
+    }
+
+    &__input {
+        font-family: var(--font-sans);
+        font-size: var(--font-size-md);
+        line-height: var(--line-height-normal);
+        height: var(--input-height);
+        width: 100%;
+        margin: 0 auto;
+        padding-left: calc(var(--button-height) + 1rem);
+        padding-right: calc(var(--button-height) + 1rem);
+        border-radius: var(--input-height);
+        color: inherit;
+        background-color: hsl(var(--surface-background-color));
+    }
+
+    &__close-btn {
+        position: absolute;
+        top: 50%;
+        right: 1rem;
+        width: var(--button-height);
+        height: var(--button-height);
+        color: currentcolor;
+        background-color: transparent;
+        transform: translateY(-50%);
+    }
+
+    &--open {
+        opacity: 100%;
+
+        #{$root}__content {
+            transform: translateY(0);
+        }
+    }
+
+    @include mixins.should-animate {
+        @include mixins.transition(opacity);
+    }
+}

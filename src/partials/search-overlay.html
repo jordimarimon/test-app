@@ -1,0 +1,32 @@
+<template id="search-overlay-tmpl">
+
+    <div
+        id="search-overlay"
+        class="search-overlay"
+        aria-hidden="true"
+        aria-modal="true"
+    >
+        <div id="search-overlay-content" class="search-overlay__content">
+            <span class="icon search-overlay__search-icon">
+                search
+            </span>
+
+            <input
+                id="search-overlay-input"
+                type="text"
+                placeholder="Search..."
+                class="search-overlay__input"
+                aria-label="Search"
+            />
+
+            <button
+                id="search-overlay-close-btn"
+                class="search-overlay__close-btn"
+                aria-label="Cancel search"
+            >
+                <span class="icon">close</span>
+            </button>
+        </div>
+    </div>
+
+</template>

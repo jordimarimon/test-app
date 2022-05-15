@@ -42,6 +42,17 @@
     &-auto {
         margin-inline-start: auto;
     }
+
+    &-2 {
+        margin-inline-start: 0.5rem;
+    }
+}
+
+.my {
+    &-4 {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
 }
 
 ///////////////////////////////////////////////////////////////////////////////

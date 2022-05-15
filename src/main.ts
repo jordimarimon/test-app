@@ -1,4 +1,4 @@
+import './core/side-bar';
 import './core/router';
-
-// https://www.globalcyclingnetwork.com/api/devtask
-// https://github.com/SHIFTActiveMedia/gcnAssets
+import './core/navbar';
+import './core/search';
